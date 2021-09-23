@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,8 +16,9 @@
 		3FCDC18726FC696800C07AE2 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCDC18626FC696800C07AE2 /* ViewModel.swift */; };
 		3FCDC18926FC6A0D00C07AE2 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCDC18826FC6A0D00C07AE2 /* LoginView.swift */; };
 		3FCDC18B26FC6CD800C07AE2 /* ViewSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCDC18A26FC6CD800C07AE2 /* ViewSelector.swift */; };
-		3FCDC18D26FC6E2800C07AE2 /* ResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCDC18C26FC6E2800C07AE2 /* ResponseData.swift */; };
+		3FCDC18D26FC6E2800C07AE2 /* LoginResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCDC18C26FC6E2800C07AE2 /* LoginResponseData.swift */; };
 		3FCDC19126FC72A000C07AE2 /* ConectData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCDC19026FC72A000C07AE2 /* ConectData.swift */; };
+		3FCDC19926FCA01A00C07AE2 /* MainGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCDC19826FCA01A00C07AE2 /* MainGameView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,8 +32,10 @@
 		3FCDC18626FC696800C07AE2 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		3FCDC18826FC6A0D00C07AE2 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		3FCDC18A26FC6CD800C07AE2 /* ViewSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewSelector.swift; sourceTree = "<group>"; };
-		3FCDC18C26FC6E2800C07AE2 /* ResponseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseData.swift; sourceTree = "<group>"; };
+		3FCDC18C26FC6E2800C07AE2 /* LoginResponseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginResponseData.swift; sourceTree = "<group>"; };
 		3FCDC19026FC72A000C07AE2 /* ConectData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConectData.swift; sourceTree = "<group>"; };
+		3FCDC19426FC743D00C07AE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3FCDC19826FCA01A00C07AE2 /* MainGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainGameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,10 +68,11 @@
 		3FCDC16D26FC64D900C07AE2 /* GameForFour */ = {
 			isa = PBXGroup;
 			children = (
+				3FCDC19426FC743D00C07AE2 /* Info.plist */,
 				3FCDC16E26FC64D900C07AE2 /* GameForFourApp.swift */,
 				3FCDC17226FC64DB00C07AE2 /* Assets.xcassets */,
-				3FCDC18126FC684400C07AE2 /* Tools */,
 				3FCDC18026FC682400C07AE2 /* IgnoreData */,
+				3FCDC18126FC684400C07AE2 /* Tools */,
 				3FCDC17F26FC681B00C07AE2 /* Models */,
 				3FCDC17E26FC681000C07AE2 /* Repository */,
 				3FCDC17D26FC680700C07AE2 /* ViewModel */,
@@ -91,6 +95,7 @@
 			children = (
 				3FCDC17026FC64D900C07AE2 /* ContentView.swift */,
 				3FCDC18826FC6A0D00C07AE2 /* LoginView.swift */,
+				3FCDC19826FCA01A00C07AE2 /* MainGameView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -115,8 +120,8 @@
 		3FCDC17F26FC681B00C07AE2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3FCDC19526FC7BBA00C07AE2 /* Responses */,
 				3FCDC18A26FC6CD800C07AE2 /* ViewSelector.swift */,
-				3FCDC18C26FC6E2800C07AE2 /* ResponseData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -134,6 +139,14 @@
 			children = (
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		3FCDC19526FC7BBA00C07AE2 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				3FCDC18C26FC6E2800C07AE2 /* LoginResponseData.swift */,
+			);
+			path = Responses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,7 +185,7 @@
 				};
 			};
 			buildConfigurationList = 3FCDC16626FC64D900C07AE2 /* Build configuration list for PBXProject "GameForFour" */;
-			compatibilityVersion = "Xcode 13.0";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -211,10 +224,11 @@
 				3FCDC18726FC696800C07AE2 /* ViewModel.swift in Sources */,
 				3FCDC18B26FC6CD800C07AE2 /* ViewSelector.swift in Sources */,
 				3FCDC17126FC64D900C07AE2 /* ContentView.swift in Sources */,
-				3FCDC18D26FC6E2800C07AE2 /* ResponseData.swift in Sources */,
+				3FCDC18D26FC6E2800C07AE2 /* LoginResponseData.swift in Sources */,
 				3FCDC18326FC68B000C07AE2 /* NetworkService.swift in Sources */,
 				3FCDC16F26FC64D900C07AE2 /* GameForFourApp.swift in Sources */,
 				3FCDC18526FC68C400C07AE2 /* Repository.swift in Sources */,
+				3FCDC19926FCA01A00C07AE2 /* MainGameView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +362,10 @@
 				DEVELOPMENT_TEAM = AD4RURV9JH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GameForFour/Info.plist;
+				INFOPLIST_KEY_CFBundleExecutable = GameForFour;
+				INFOPLIST_KEY_CFBundleName = GameForFour;
+				INFOPLIST_KEY_CFBundleVersion = 1;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -378,6 +396,10 @@
 				DEVELOPMENT_TEAM = AD4RURV9JH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GameForFour/Info.plist;
+				INFOPLIST_KEY_CFBundleExecutable = GameForFour;
+				INFOPLIST_KEY_CFBundleName = GameForFour;
+				INFOPLIST_KEY_CFBundleVersion = 1;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

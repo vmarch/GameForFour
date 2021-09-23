@@ -5,10 +5,6 @@
 //  Created by devtolife on 23.09.21.
 //
 
-/*
-For testing user's "token" == "id" in Server DB Table
-*/
-
 import Foundation
 class Repository{
     
@@ -21,78 +17,46 @@ class Repository{
     init(){}
     
     //====================================================================
-    //---------------------- GET USER COUNT--------------------------
-    //--------------------------------------------------------------------
-    
-    func checkOnServerIfCurrentUserIsLogged(vm:ViewModel, userToken: String){
-        viewModel = vm
-
-        if(!isInternet){
-            print("Show allert = No Internet")
-        }else{
-            let url = URL(string: (ConectData().testIsLoggedEndpoint))!
-            let bodyData: String = "uid=\(userToken)"
-            NetworkService.connectToServer(url: url, bodyDataText: bodyData) {  [weak self] resultData, resultError in
-                guard let self = self else{return}
-                if(resultData != nil){
-                   
-                    do {
-                        guard let d = resultData else {return}
-                            let decodedJson = try JSONDecoder().decode([IsLoggedResponseData].self, from: d)
-                    
-                            DispatchQueue.main.async {
-                                guard let dataController = self.dataController else { return }
-                                dataController.isStayLoggedInApp(data: decodedJson[0])
-                            }
-                            //If on server User status is not logged -> delete current user token in app.
-                            if(decodedJson[0].state == "2"||decodedJson[0].state == "0"){
-                                self.deleteUserTokenInApp()
-                            }
-                            
-                    }catch{
-                        print("ERROR")
-                        self.dataController = nil
-                    }
-                }else{
-                    print("ERROR: \(String(describing: resultError))")
-                    self.dataController = nil
-                }
-            }
-        }
-    }
-
-    //====================================================================
-    //---------------------------- LOGIN --------------------------------
+    //---------------------------- LOGIN TO GAME--------------------------------
     //--------------------------------------------------------------------
     
     //Authenticate with LoginName and Password
-    func login(dc: DataController,login: String, password: String){
-     dataController = dc
+    func login(vm: ViewModel,login: String, password: String){
+     viewModel = vm
         
         if(!isInternet){
-            userLoggedIn = server.login(login: login, password: password)
+            print("Show allert = No Internet")
         }else{
-            let url = URL(string: (ConectData().testLogintEndpoint))!
-            let bodyData: String = "username=\(login)&password=\(password)"
+            let url = URL(string: (ConectData().testLoginEndpoint))!
+            /*
+            //Connect to Vladi
+            let bodyData: String = "\(ConectData().keyWordUser)=\(login)&\(ConectData().keyWordPass)=\(password)"
+            */
+            
+            //Connect to Alex
+            let bodyData: String = "\(ConectData().keyWordUser)=\(login)"
+          
             NetworkService.connectToServer(url: url, bodyDataText: bodyData) {  [weak self] resultData, resultError in
                 guard let self = self else{return}
                 if(resultData != nil){
                    
                     do {
                         guard let d = resultData else {return}
-                            let decodedJson = try JSONDecoder().decode([LoginResponseData].self, from: d)
+
+                        print(     String(data: resultData!, encoding: .utf8))
+                           let decodedJson = try JSONDecoder().decode([LoginResponseData].self, from: d)
                     
                             DispatchQueue.main.async {
-                                guard let dataController = self.dataController else { return }
-                                dataController.isLoggedIn(data: decodedJson[0])
+                                guard let viewModel = self.viewModel else { return }
+                                viewModel.isLoggedIn(data: decodedJson[0])
                             }
                     }catch{
                         print("ERROR")
-                        self.dataController = nil
+                        self.viewModel = nil
                     }
                 }else{
                     print("ERROR: \(String(describing: resultError))")
-                    self.dataController = nil
+                    self.viewModel = nil
                 }
             }
         }
@@ -102,6 +66,7 @@ class Repository{
     //---------------------------- LOGOUT --------------------------------
     //--------------------------------------------------------------------
     
+    /*
     //Logout from Server and App.
     func logout(){
         changeUserLoginStatusOnServer(userToken:checkUserTokenInApp(),changeStatusTo: false)
@@ -146,4 +111,5 @@ class Repository{
             }
         }
     }
+     */
 }

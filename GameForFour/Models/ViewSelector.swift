@@ -10,8 +10,6 @@ import Foundation
 // MARK: - ViewSelector
 enum ViewSelector {
     // Tools view
-    case start
-    case wait
     case settings
     case profile
     

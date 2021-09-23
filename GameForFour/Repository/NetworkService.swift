@@ -11,7 +11,9 @@ class NetworkService{
         
         let url = url
         var request = URLRequest(url: url)
+      
         request.httpMethod = "POST"
+        // request.httpMethod = "GET"
         
         let bodyData: String = bodyDataText
         request.httpBody = bodyData.data(using: .utf8)
