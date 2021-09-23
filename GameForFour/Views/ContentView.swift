@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  GameForFour
 //
-//  Created by Student on 23.09.21.
+//  Created by devtolife on 23.09.21.
 //
 
 import SwiftUI

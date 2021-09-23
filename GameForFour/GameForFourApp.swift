@@ -2,16 +2,19 @@
 //  GameForFourApp.swift
 //  GameForFour
 //
-//  Created by Student on 23.09.21.
+//  Created by devtolife on 23.09.21.
 //
 
 import SwiftUI
 
 @main
 struct GameForFourApp: App {
+    @StateObject var dc: ViewModel = ViewModel()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView{
+                ContentView()
+            }.environmentObject(dc)
         }
     }
 }

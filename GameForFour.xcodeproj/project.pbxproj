@@ -11,6 +11,13 @@
 		3FCDC17126FC64D900C07AE2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCDC17026FC64D900C07AE2 /* ContentView.swift */; };
 		3FCDC17326FC64DB00C07AE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FCDC17226FC64DB00C07AE2 /* Assets.xcassets */; };
 		3FCDC17626FC64DB00C07AE2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FCDC17526FC64DB00C07AE2 /* Preview Assets.xcassets */; };
+		3FCDC18326FC68B000C07AE2 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCDC18226FC68B000C07AE2 /* NetworkService.swift */; };
+		3FCDC18526FC68C400C07AE2 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCDC18426FC68C400C07AE2 /* Repository.swift */; };
+		3FCDC18726FC696800C07AE2 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCDC18626FC696800C07AE2 /* ViewModel.swift */; };
+		3FCDC18926FC6A0D00C07AE2 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCDC18826FC6A0D00C07AE2 /* LoginView.swift */; };
+		3FCDC18B26FC6CD800C07AE2 /* ViewSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCDC18A26FC6CD800C07AE2 /* ViewSelector.swift */; };
+		3FCDC18D26FC6E2800C07AE2 /* ResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCDC18C26FC6E2800C07AE2 /* ResponseData.swift */; };
+		3FCDC19126FC72A000C07AE2 /* ConectData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCDC19026FC72A000C07AE2 /* ConectData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +26,13 @@
 		3FCDC17026FC64D900C07AE2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3FCDC17226FC64DB00C07AE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3FCDC17526FC64DB00C07AE2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3FCDC18226FC68B000C07AE2 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		3FCDC18426FC68C400C07AE2 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		3FCDC18626FC696800C07AE2 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		3FCDC18826FC6A0D00C07AE2 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		3FCDC18A26FC6CD800C07AE2 /* ViewSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewSelector.swift; sourceTree = "<group>"; };
+		3FCDC18C26FC6E2800C07AE2 /* ResponseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseData.swift; sourceTree = "<group>"; };
+		3FCDC19026FC72A000C07AE2 /* ConectData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConectData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +66,13 @@
 			isa = PBXGroup;
 			children = (
 				3FCDC16E26FC64D900C07AE2 /* GameForFourApp.swift */,
-				3FCDC17026FC64D900C07AE2 /* ContentView.swift */,
 				3FCDC17226FC64DB00C07AE2 /* Assets.xcassets */,
+				3FCDC18126FC684400C07AE2 /* Tools */,
+				3FCDC18026FC682400C07AE2 /* IgnoreData */,
+				3FCDC17F26FC681B00C07AE2 /* Models */,
+				3FCDC17E26FC681000C07AE2 /* Repository */,
+				3FCDC17D26FC680700C07AE2 /* ViewModel */,
+				3FCDC17C26FC67FF00C07AE2 /* Views */,
 				3FCDC17426FC64DB00C07AE2 /* Preview Content */,
 			);
 			path = GameForFour;
@@ -65,6 +84,56 @@
 				3FCDC17526FC64DB00C07AE2 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3FCDC17C26FC67FF00C07AE2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3FCDC17026FC64D900C07AE2 /* ContentView.swift */,
+				3FCDC18826FC6A0D00C07AE2 /* LoginView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3FCDC17D26FC680700C07AE2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3FCDC18626FC696800C07AE2 /* ViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3FCDC17E26FC681000C07AE2 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				3FCDC18426FC68C400C07AE2 /* Repository.swift */,
+				3FCDC18226FC68B000C07AE2 /* NetworkService.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		3FCDC17F26FC681B00C07AE2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3FCDC18A26FC6CD800C07AE2 /* ViewSelector.swift */,
+				3FCDC18C26FC6E2800C07AE2 /* ResponseData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3FCDC18026FC682400C07AE2 /* IgnoreData */ = {
+			isa = PBXGroup;
+			children = (
+				3FCDC19026FC72A000C07AE2 /* ConectData.swift */,
+			);
+			path = IgnoreData;
+			sourceTree = "<group>";
+		};
+		3FCDC18126FC684400C07AE2 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +206,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FCDC18926FC6A0D00C07AE2 /* LoginView.swift in Sources */,
+				3FCDC19126FC72A000C07AE2 /* ConectData.swift in Sources */,
+				3FCDC18726FC696800C07AE2 /* ViewModel.swift in Sources */,
+				3FCDC18B26FC6CD800C07AE2 /* ViewSelector.swift in Sources */,
 				3FCDC17126FC64D900C07AE2 /* ContentView.swift in Sources */,
+				3FCDC18D26FC6E2800C07AE2 /* ResponseData.swift in Sources */,
+				3FCDC18326FC68B000C07AE2 /* NetworkService.swift in Sources */,
 				3FCDC16F26FC64D900C07AE2 /* GameForFourApp.swift in Sources */,
+				3FCDC18526FC68C400C07AE2 /* Repository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
