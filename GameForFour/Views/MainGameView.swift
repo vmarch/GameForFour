@@ -12,6 +12,8 @@ struct MainGameView: View {
     
     var body: some View {
         Text("Herzlich willkommen \(vm.userAppName)!!!")
+        
+        Circle().frame(width: 50, height: 50)
     }
 }
 
