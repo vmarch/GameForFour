@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct MainGameView: View {
+    @EnvironmentObject var vm:ViewModel
+    
     var body: some View {
-        Text("Herzlich willkommen!!")
+        Text("Herzlich willkommen \(vm.userAppName)!!!")
     }
 }
 

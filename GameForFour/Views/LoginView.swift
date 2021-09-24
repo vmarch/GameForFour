@@ -13,9 +13,10 @@ struct LoginView: View{
    
     var body: some View{
         VStack{
-            Spacer()
+          
             TitleNameView()
-            Spacer()
+                .padding()
+       
             LoginField()
            // PasswordField()
             
@@ -33,15 +34,15 @@ struct LoginView: View{
                                        .font(.system(size: 32, weight: .medium))
                                        .cornerRadius(15)
                                        .padding()
+                                       .shadow(color: Color.blue, radius: 5)
                 }else{
                     Text("Login")
                                        .frame(width: 200, height: 50, alignment: .center)
-                                       .background(Color.secondary)
-                                       .foregroundColor(.black)
+                                       .background(Color.white)
+                                       .foregroundColor(.gray)
                                        .font(.system(size: 32, weight: .medium))
                                        .cornerRadius(15)
                                        .padding()
-
                 }
             }
             
@@ -54,18 +55,23 @@ struct LoginView: View{
                     .foregroundColor(.gray)
                     .padding()
             }
-            Spacer()
         }
     }
 }
 
 struct TitleNameView: View {
+    @EnvironmentObject var vm:ViewModel
     var body: some View {
-        Text("Let's Play")
-            .font(.system(size: 40, weight: .medium))
-            .foregroundColor(.white)
-            .shadow(color: .white, radius: 15, x: 5.0, y: 8.0)
-            .padding()
+        Button(action:{
+                vm.updateButtonPressed = true
+        }){
+            //"arrow.clockwise"
+            Text("Let's Play").font(.system(size: 40, weight: .medium))
+                .foregroundColor(.white)
+                .padding()
+              
+        }.buttonStyle(PlainButtonStyle())  .shadow(color: .white, radius: 15, x: 5.0, y: 8.0)
+  
     }
 }
 
@@ -73,7 +79,15 @@ struct LoginField: View {
     @EnvironmentObject var vm:ViewModel
    // @Binding var loginName:String
     var body: some View {
-        TextField("Login:", text: $vm.loginName).autocapitalization(UITextAutocapitalizationType.none).disableAutocorrection(true).padding().frame(width: 300, height: 40).background(Color.white).cornerRadius(6).padding(2)
+        TextField("Login:", text: $vm.loginName)
+            .autocapitalization(UITextAutocapitalizationType.none)
+            .disableAutocorrection(true)
+            .padding()
+            .frame(width: 300, height: 40)
+            .background(Color.white)
+            .cornerRadius(6)
+            .padding(2)
+            .shadow(color: Color.white, radius: 5)
     }
 }
 /*

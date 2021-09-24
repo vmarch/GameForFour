@@ -33,4 +33,9 @@ class NetworkService{
         }
         dataTask.resume()
     }
+    
+    class func clearRoomOnServer(url: URL){
+        let dataTask = URLSession.shared.dataTask(with: url)
+        dataTask.resume()
+    }
 }

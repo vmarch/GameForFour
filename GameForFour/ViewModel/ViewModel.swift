@@ -11,17 +11,26 @@ import SwiftUI
 final class ViewModel: ObservableObject{
     
     private var repository: Repository = Repository()
-    
+    @Published var userAppName: String = ""
     @Published var viewSelector: ViewSelector = .login
     
     @Published var userIsLoggedIn: Bool = false
-        
 
     @Published var showAlert: Bool = false
     @Published var messageTitle: String = ""
     @Published var messageText: String = ""
      
-    @Published var updateButtonPressed: Bool = false
+    @Published var updateButtonPressed: Bool = false {
+        didSet{
+            secretButton += 1
+            if(secretButton == 6){
+                                clearRoom()
+                secretButton = 0
+            }
+        
+        }
+    }
+     private var secretButton:Int = 0
        
     
     //---------------------------------------------------------------------
@@ -105,6 +114,10 @@ final class ViewModel: ObservableObject{
     func isLoggedIn(data: LoginResponseData){
         print("<<<<< VM >>>>> isLoggedIn() -> data: \(data)")
         if(data.state == "3"){
+            //Set User Name in app. Clear Login Name.
+            userAppName = loginName
+            loginName = ""
+            
             self.userIsLoggedIn = true
             self.viewSelector = .main
         }else if(data.state == "2"){
@@ -137,6 +150,10 @@ final class ViewModel: ObservableObject{
     //---------------------------- END of LOGIN -------------------------------
     //=========================================================================
     
+    
+    func clearRoom(){
+        repository.clearRoom()
+    }
     
 //    func logOut(){
 //        repository.logout()

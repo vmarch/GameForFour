@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -120,8 +120,8 @@
 		3FCDC17F26FC681B00C07AE2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3FCDC19A26FCBD1600C07AE2 /* Selectors */,
 				3FCDC19526FC7BBA00C07AE2 /* Responses */,
-				3FCDC18A26FC6CD800C07AE2 /* ViewSelector.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -147,6 +147,14 @@
 				3FCDC18C26FC6E2800C07AE2 /* LoginResponseData.swift */,
 			);
 			path = Responses;
+			sourceTree = "<group>";
+		};
+		3FCDC19A26FCBD1600C07AE2 /* Selectors */ = {
+			isa = PBXGroup;
+			children = (
+				3FCDC18A26FC6CD800C07AE2 /* ViewSelector.swift */,
+			);
+			path = Selectors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,7 +193,7 @@
 				};
 			};
 			buildConfigurationList = 3FCDC16626FC64D900C07AE2 /* Build configuration list for PBXProject "GameForFour" */;
-			compatibilityVersion = "Xcode 12.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
